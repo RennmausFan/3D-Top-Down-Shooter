@@ -75,6 +75,14 @@ public class CubeActions : MonoBehaviour
         health -= damage;
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyBullet")
+        {
+            TakeDamage(other.gameObject.GetComponent<ShootBullet>().damage);
+        }
+    }
+
     public void SetSpawnpoint(Vector3 pSpawnpoint)
     {
         spawnpoint = pSpawnpoint;

@@ -11,7 +11,7 @@ public class EnemyBase : MonoBehaviour{
     protected GameObject player;
 
     [SerializeField]
-    private GameObject deathParticle;
+    protected GameObject deathParticle;
 
     [SerializeField]
     protected Rigidbody rb;
@@ -29,12 +29,7 @@ public class EnemyBase : MonoBehaviour{
         }
 	}
 
-    public void moveCube(Vector3 pDirection)
-    {
-        rb.AddForce(pDirection * cubeSpeed * Time.deltaTime);
-    }
-
-
+    //Enemy can take damage by shooting at them
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bullet")
@@ -50,10 +45,11 @@ public class EnemyBase : MonoBehaviour{
         Destroy(gameObject);
     }
 
+    //Make the enemy follow the player
     protected void FollowPlayer()
     {
         Vector3 direction = player.transform.position - gameObject.transform.position;
-        moveCube(direction);
+        rb.AddForce(direction * cubeSpeed * Time.deltaTime);
         isFollowing = true;
     }
 
@@ -74,7 +70,6 @@ public class EnemyBase : MonoBehaviour{
         */
         //Calculate distance (player <---> enemy)
         float distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
-
         if (distance > maxDistance)
         {
             return false;
@@ -84,5 +79,4 @@ public class EnemyBase : MonoBehaviour{
             return true;
         }
     }
-
 }

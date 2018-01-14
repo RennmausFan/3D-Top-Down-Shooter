@@ -34,7 +34,14 @@ public class ShootBullet : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Bullet" && other.gameObject.tag != "IgnoreBullets")
+        //Enemy bullets
+        if (gameObject.tag == "EnemyBullet" && other.gameObject.tag != "EnemyBullet" && other.gameObject.tag != "Enemy" && other.gameObject.tag != "IgnoreBullets")
+        {
+            Instantiate(hitParticle, thisObj.transform.position, Quaternion.identity);
+            Destroy(thisObj);
+        }
+        //Player bullets
+        else if (gameObject.tag == "Bullet" && other.gameObject.tag != "Player" && other.gameObject.tag != "Bullet" && other.gameObject.tag != "IgnoreBullets")
         {
             Instantiate(hitParticle, thisObj.transform.position, Quaternion.identity);
             Destroy(thisObj);
