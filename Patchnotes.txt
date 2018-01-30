@@ -1,0 +1,26 @@
+Version 0.1.1 (Release 30.01.18)
+--------------------------------------------------
+NEW:
+
+- Added Highscore to main menu
+- Added Dash Buttons
+- Added more rooms
+- Increasingly room count every fitht stage
+- Added a Health Display
+- New Game Icon
+
+FIXED:
+
+- UI scales with screen size
+- Improved moving (at least at some point)
+- More minor bugfixes
+
+BUGS (New ones! Yeah!):
+
+- Enemies can detect Player through walls and shot him sometimes
+- Start Button is pressed on Start
+- Dual Stick Controlls stills sucks (and range doesnt scale with screen size)
+- Player still sticks to walls
+- Still Level Generation Problems
+- Some times "GlowPlayer" still spawns for some reason
+- Shooting isnt accurate with the controls
