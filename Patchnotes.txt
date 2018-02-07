@@ -1,5 +1,6 @@
+-------------------------------------------------------------------------------
 Version 0.1.1 (Release 30.01.18)
---------------------------------------------------
+-------------------------------------------------------------------------------
 NEW:
 
 - Added Highscore to main menu
@@ -24,3 +25,25 @@ BUGS (New ones! Yeah!):
 - Still Level Generation Problems
 - Some times "GlowPlayer" still spawns for some reason
 - Shooting isnt accurate with the controls
+
+-------------------------------------------------------------------------------
+Version 0.1.2 (Release 31.01.18)
+-------------------------------------------------------------------------------
+NEW:
+
+- Changed Shooting/Dash controls
+
+GAMEPLAY:
+
+- Enemies only react if player is in their parent room
+- Reduced firerate to one shot in 1.1 seconds
+- Increased bullet size significantly (for both player an enemies)
+- Increased bullet speed (for both player an enemies)
+
+FIXED:
+
+- "GlowPlayer" was removed from the game
+- HealthDisplay cannot display negative values anymore
+- Adjustable delay after the player dies
+- Goal Collider doesnt block bullets anymore
+- Glow Count doesnt reset anymore each stage (more testing needed)
